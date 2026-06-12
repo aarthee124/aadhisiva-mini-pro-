@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailPulse Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container fade-in">
+
+        <h1 class="title">🚂 RailPulse Tracker</h1>
+        <p class="subtitle">Thirumangalam → Madurai Live Status</p>
+
+        <form action="/verify" method="GET" class="search-form">
+
+            <!-- Train Number -->
+            <div class="form-group">
+                <label>TRAIN NUMBER</label>
+                <input
+                    type="text"
+                    name="train_no"
+                    placeholder="e.g. 12694, 16237, 16724, 56701"
+                    required
+                />
+            </div>
+
+            <!-- Journey Date -->
+            <div class="form-group">
+                <label>JOURNEY DATE</label>
+                <select name="departure">
+                    <option value="Today">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Yesterday">Yesterday</option>
+                </select>
+            </div>
+
+            <!-- Station -->
+            <div class="form-group">
+                <label>STATION CODE</label>
+                <select name="destination">
+                    <option value="Thirumangalam">Thirumangalam (TMQ)</option>
+                    <option value="Madurai Junction">Madurai Junction (MDU)</option>
+                    <option value="Tirupparankundram">Tirupparankundram (TDN)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-orange">🔍 SEARCH TRAIN</button>
+
+        </form>
+
+        <!-- Available trains info -->
+        <div class="info-box">
+            <p>📋 Available Train Numbers:</p>
+            <p>12694 · 16237 · 16724 · 56701</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
